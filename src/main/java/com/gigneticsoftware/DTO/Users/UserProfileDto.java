@@ -8,6 +8,7 @@ public class UserProfileDto {
     private String name;
     private String email;
     private String phone;
+    private String role;
     private boolean isGoldMember;
     private Double walletBalance;
 }

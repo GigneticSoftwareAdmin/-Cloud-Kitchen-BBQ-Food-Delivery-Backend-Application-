@@ -3,15 +3,38 @@ package com.gigneticsoftware.Features.Users;
 import com.gigneticsoftware.Common.UserRole;
 import com.gigneticsoftware.DTO.Users.UserProfileDto;
 
+import java.util.List;
+
 public interface UserService {
-    // Internal: Used by Admin to create Staff (Managers/Support)
-    User createStaff(String name, String email, String password, UserRole role);
+    // ==============================================================
+    // WRITE OPERATIONS
+    // ==============================================================
 
-    // Public: Used by Customers to register
-    User registerCustomer(String name, String email, String phoneNumber);
+    /**
+     * INTERNAL USE ONLY (Admin Panel).
+     * Allows creating users with specific elevated roles (MANAGER, SUPPORT).
+     */
+    UserProfileDto createStaff(UserProfileDto profileDto, String password, UserRole role);
 
-    // Read Operations
-    User findById(Long id);
-    User findByPhoneNumber(String phoneNumber);
-    UserProfileDto getUserProfile(Long userId);
+    /**
+     * PUBLIC USE (Mobile App/Website).
+     * Automatically assigns the CUSTOMER role.
+     */
+    UserProfileDto registerCustomer(UserProfileDto profileDto, String password);
+
+    // ==============================================================
+    // READ OPERATIONS
+    // ==============================================================
+
+    // Get public profile by ID
+    UserProfileDto getUserProfile(String userId);
+
+    // Search user by verified phone number (Useful for login/forgot password)
+    UserProfileDto getUserByPhoneNumber(String phoneNumber);
+
+    // List all users (Admin dashboard)
+    List<UserProfileDto> getAllUsers();
+
+    // Update profile
+    UserProfileDto updateUser(String id, UserProfileDto userProfileDTO);
 }
