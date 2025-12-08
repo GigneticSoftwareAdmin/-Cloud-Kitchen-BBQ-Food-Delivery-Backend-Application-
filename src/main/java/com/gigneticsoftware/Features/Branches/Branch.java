@@ -2,12 +2,16 @@ package com.gigneticsoftware.Features.Branches;
 
 import com.gigneticsoftware.Features.Users.User;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.locationtech.jts.geom.Polygon; // Requires hibernate-spatial
 
 @Entity
 @Table(name = "branches")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Branch {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

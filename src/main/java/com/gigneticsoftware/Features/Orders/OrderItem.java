@@ -2,11 +2,15 @@ package com.gigneticsoftware.Features.Orders;
 
 import com.gigneticsoftware.Features.Products.Product;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "order_items")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

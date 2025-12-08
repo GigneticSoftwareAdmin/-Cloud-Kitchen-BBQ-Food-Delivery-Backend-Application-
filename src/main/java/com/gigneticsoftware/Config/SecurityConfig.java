@@ -18,7 +18,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
    // private final JwtAuthenticationFilter jwtAuthFilter; // You need to create this filter next
-    private final UserDetailsService userDetailsService; // Must implement this in a separate service
+   // private final UserDetailsService userDetailsService; // Must implement this in a separate service
 
 //    @Bean
 //    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

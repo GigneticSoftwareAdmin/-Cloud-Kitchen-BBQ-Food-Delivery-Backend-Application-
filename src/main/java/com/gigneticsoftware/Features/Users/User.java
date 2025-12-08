@@ -2,13 +2,17 @@ package com.gigneticsoftware.Features.Users;
 
 import com.gigneticsoftware.Common.UserRole;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
-@Data
+//@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

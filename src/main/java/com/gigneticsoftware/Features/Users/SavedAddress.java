@@ -1,12 +1,16 @@
 package com.gigneticsoftware.Features.Users;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 import org.locationtech.jts.geom.Point;
 
 @Entity
 @Table(name = "user_addresses")
-@Data
+//@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class SavedAddress {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

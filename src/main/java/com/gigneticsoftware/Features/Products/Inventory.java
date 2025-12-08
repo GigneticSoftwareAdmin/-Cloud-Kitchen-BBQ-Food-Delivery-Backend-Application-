@@ -2,13 +2,17 @@ package com.gigneticsoftware.Features.Products;
 
 import com.gigneticsoftware.Features.Branches.Branch;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @Entity
 @Table(name = "branch_inventory")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Inventory {
     @EmbeddedId
     private InventoryId id;
@@ -28,6 +32,8 @@ public class Inventory {
 
 @Embeddable
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 class InventoryId implements Serializable {
     private String branchId;
     private String productId;

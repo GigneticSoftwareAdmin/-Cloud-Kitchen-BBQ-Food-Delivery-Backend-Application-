@@ -5,13 +5,17 @@ import com.gigneticsoftware.Common.PaymentStatus;
 import com.gigneticsoftware.Features.Orders.Order;
 import com.gigneticsoftware.Features.Users.User;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "payments")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

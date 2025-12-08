@@ -2,7 +2,9 @@ package com.gigneticsoftware.Features.Delivery;
 
 import com.gigneticsoftware.Features.Users.User;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.locationtech.jts.geom.Point;
 
 import java.time.LocalDateTime;
@@ -10,6 +12,8 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "driver_live_location")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class DriverLocation {
     @Id
     private String driverId; // Shared Key with User ID

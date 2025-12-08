@@ -1,13 +1,13 @@
 package com.gigneticsoftware.Exceptions;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class ErrorDetails {
     private LocalDateTime timestamp;
     private String message;
